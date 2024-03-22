@@ -1,0 +1,60 @@
+.contenido-detalle-pokemon {
+  text-align: center;
+  padding: 20px;
+}
+
+.imagen-pokemon {
+  width: 220px;
+  height: auto;
+  margin: 40px auto;
+  display: block;
+  border-radius: 100px 0px 100px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-detalle-pokemon ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  column-count: 2;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+.contenido-detalle-pokemon ul li {
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+ion-header ion-title {
+  color: #ffffff;
+}
+
+.datos-pokemon {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.estadisticas-caja {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 2px solid #ff9e80;
+}
+
+.contenedor-pokemon {
+  display: flex;
+  border-radius: 100px 0px 100px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.datos-pokemon {
+  margin-right: 20px;
+}
+
+ion-row {
+  justify-content: space-around;
+}

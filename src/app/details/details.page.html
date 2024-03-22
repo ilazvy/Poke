@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Detalle de Pokémon
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido-detalle-pokemon">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="12" size-md="8" size-lg="6">
+        <ion-card *ngIf="pokemon">
+          <ion-card-header>
+            <ion-card-title>{{ pokemon.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="imagen-pokemon"></ion-img>
+            <div class="info-pokemon">
+              <ion-row class="ion-align-items-center">
+                <ion-col class="columna-dato">
+                  <p><strong>ID:</strong> {{ pokemon.id }}</p>
+                </ion-col>
+                <ion-col class="columna-dato">
+                  <p><strong>Altura:</strong> {{ pokemon.height }}</p>
+                </ion-col>
+                <ion-col class="columna-dato">
+                  <p><strong>Peso:</strong> {{ pokemon.weight }}</p>
+                </ion-col>
+              </ion-row>
+              <p><strong>Estadísticas:</strong></p>
+              <ul>
+                <li *ngFor="let stat of pokemon.stats">
+                  <ng-container *ngIf="stat.stat.name !== 'special-defense'">
+                    {{ traducirNombre(stat.stat.name) }}: {{ stat.base_stat }}
+                  </ng-container>
+                </li>
+              </ul>
+              <p><strong>Experiencia base:</strong> {{ pokemon.base_experience }}</p>
+              <p><strong>Tipos:</strong></p>
+              <ul>
+                <li *ngFor="let type of pokemon.types">{{ type.type.name }}</li>
+              </ul>
+              <p><strong>Habilidades:</strong></p>
+              <ul>
+                <li *ngFor="let ability of pokemon.abilities">{{ ability.ability.name }}</li>
+              </ul>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
